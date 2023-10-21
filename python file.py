@@ -2,11 +2,12 @@ import requests
 import json
 import sqlite3
 
+api_key = "your api key here"
 
 def artist_info(artist_name):
     return requests.get(f"http://ws.audioscrobbler.com/2.0/"
                         f"?method=artist.getinfo&artist={artist_name.replace(' ', '+')}"
-                        f"&api_key=66257839044cef7e32d32b97b3be2384&format=json")
+                        f"&api_key={api_key}&format=json")
 
 
 def export_json(artist_name):
